@@ -7,3 +7,6 @@ Compact word-level LSTM trained on the ACL IMDb review corpus. The official trai
 Python 3.10+ recommended. Create a virtual environment and install `pip install -r requirements.txt`. Run `python main.py --help` for options. Data downloads to `data/`; model outputs and metrics are written to `outputs/`. These runtime files are excluded from Git.
 
 This educational baseline uses reproducible splits/seeds and small defaults for local hardware.
+## Dataset source
+
+Downloads the Large Movie Review Dataset from [Stanford AI](https://ai.stanford.edu/~amaas/data/sentiment/). The test set is held out from the Stanford release.
