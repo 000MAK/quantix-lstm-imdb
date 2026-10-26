@@ -1,12 +1,20 @@
-# LSTM Movie Review Sentiment
+# LSTM Sentiment Classification | IMDb Reviews
 
-Compact word-level LSTM trained on the ACL IMDb review corpus. The official train split is divided into train/validation and official test remains held out. Downloads 84 MB on first run.
+A compact word-level bidirectional PyTorch LSTM for binary movie-review sentiment classification. The official training corpus is split into train and validation subsets; the official test corpus remains held out.
 
 ## Run
 
-Python 3.10+ recommended. Create a virtual environment and install `pip install -r requirements.txt`. Run `python main.py --help` for options. Data downloads to `data/`; model outputs and metrics are written to `outputs/`. These runtime files are excluded from Git.
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+python main.py --epochs 1 --limit 1000
+```
 
-This educational baseline uses reproducible splits/seeds and small defaults for local hardware.
-## Dataset source
+The first run downloads the Stanford Large Movie Review Dataset (about 84 MB). Files are stored under `data/`; model weights and metrics are written to `outputs/`. Both are excluded from Git. Run `python main.py --help` for options.
 
-Downloads the Large Movie Review Dataset from [Stanford AI](https://ai.stanford.edu/~amaas/data/sentiment/). The test set is held out from the Stanford release.
+## Model and limits
+
+Tokenization uses a simple lowercase alphabetic vocabulary with a capped sequence length. This is an educational baseline, not a state-of-the-art language model. Results depend on the chosen training subset and epochs.
+
+Dataset source: [Large Movie Review Dataset, Stanford AI](https://ai.stanford.edu/~amaas/data/sentiment/).
